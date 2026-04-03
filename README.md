@@ -15,7 +15,7 @@ Professional, industry-standard Cypress automation framework built for the **Aut
 
 ---
 
-## 🔥 Professional Features (3+ Years Industry Standard)
+## 🔥 Professional Features 
 
 1.  **Self-Healing Test Data**: Implementation of unique user generation in every test file to ensure environment neutrality and avoid "Email already exists" errors.
 2.  **Ad-Resilient Locators**: Strategic use of `data-qa` attributes and direct-URL navigation to bypass invasive site advertisements.
