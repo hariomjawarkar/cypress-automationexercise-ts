@@ -1,0 +1,27 @@
+{
+  "name": "cypress-automationexercise-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "cypress:run": "cypress run --env allure=true",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:clear": "powershell -Command \"if (Test-Path allure-results) { Remove-Item -Recurse -Force allure-results }; if (Test-Path allure-report) { Remove-Item -Recurse -Force allure-report }; if (Test-Path cypress/screenshots) { Remove-Item -Recurse -Force cypress/screenshots }\"",
+    "allure:open": "allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "@types/node": "^25.5.0",
+    "allure-commandline": "^2.24.0",
+    "cypress": "^15.13.0",
+    "mocha-allure-reporter": "^1.4.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}

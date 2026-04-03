@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": [
+            "ES6",
+            "DOM"
+        ],
+        "types": [
+            "cypress"
+        ],
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "ignoreDeprecations": "6.0",
+        "baseUrl": ".",
+        "paths": {
+            "pages/*": [
+                "pages/*"
+            ],
+            "utils/*": [
+                "utils/*"
+            ]
+        }
+    },
+    "include": [
+        "cypress/**/*.ts",
+        "pages/**/*.ts",
+        "utils/**/*.ts",
+        "cypress.config.ts",
+        "support/**/*"
+    ]
+}

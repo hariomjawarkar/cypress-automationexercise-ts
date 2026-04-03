@@ -1,0 +1,19 @@
+{
+    "user": {
+        "name": "Test User",
+        "firstName": "Test",
+        "lastName": "User",
+        "email": "testuser123@gmail.com",
+        "password": "Test@123",
+        "address": "123 Test Street",
+        "country": "India",
+        "state": "Delhi",
+        "city": "New Delhi",
+        "zipcode": "110001",
+        "mobile": "9876543210"
+    },
+    "invalidUser": {
+        "email": "wrong@gmail.com",
+        "password": "wrong123"
+    }
+}
