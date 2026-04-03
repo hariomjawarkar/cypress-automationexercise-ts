@@ -24,8 +24,8 @@ jobs:
       - name: Generate Allure Report
         if: always()
         run: |
-          # Use npx to avoid global permission issues
-          npx allure generate allure-results --clean -o allure-report
+          # The correct package name is allure-commandline
+          npx allure-commandline generate allure-results --clean -o allure-report
 
       - name: Upload Allure Dashboard
         if: always()
