@@ -1,6 +1,6 @@
 # 🚀 Cypress Automation Framework - Senior Edition
 
-Professional, industry-standard Cypress automation framework built for the **AutomationExercise** platform. Designed for scalability, resilience, and high-quality reporting, this project demonstrates a **Senior-level (3+ years experience)** approach to test automation.
+Professional, industry-standard Cypress automation framework built for the **AutomationExercise** platform. Designed for scalability, resilience, and high-quality reporting, this project demonstrates a **Senior-level** approach to test automation.
 
 ---
 
