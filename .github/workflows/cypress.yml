@@ -21,6 +21,12 @@ jobs:
           install-command: npm install
           command: npm run cypress:run
 
+      - name: Fix npm permissions
+        if: always()
+        run: |
+          # Makes binaries executable on the Linux server
+          chmod +x node_modules/.bin/* || true
+
       - name: Generate Allure Report
         if: always()
         run: |
