@@ -17,9 +17,9 @@ jobs:
         # Uses the official Cypress Action (Industry Standard)
         uses: cypress-io/github-action@v6
         with:
-          # This handles install and run automatically
+          # Use npm install to fix lockfile sync issues in CI
+          install-command: npm install
           command: npm run cypress:run
-        continue-on-error: true
 
       - name: Generate Allure Report
         if: always()
