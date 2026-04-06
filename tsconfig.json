@@ -26,7 +26,7 @@
         "cypress/**/*.ts",
         "pages/**/*.ts",
         "utils/**/*.ts",
-        "cypress.config.ts",
-        "support/**/*"
+        "cypress.config.ts"
     ]
+
 }

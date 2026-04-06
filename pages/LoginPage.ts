@@ -9,8 +9,9 @@ class LoginPage {
     };
 
     visit() {
-        cy.visit('/');
+        cy.visit('/login');
     }
+
 
     clickSignupLogin() {
         cy.get(this.locators.signupLoginBtn).click({ force: true });

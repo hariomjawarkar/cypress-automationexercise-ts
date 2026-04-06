@@ -19,25 +19,14 @@ describe('Checkout Flow', () => {
             newUser = { ...data.user };
             newUser.email = `checkout_${Date.now()}@test.com`;
 
-            // Register the user first to make the test self-healing
-            loginPage.visit();
-            loginPage.clickSignupLogin();
-            registerPage.enterName(newUser.name);
-            registerPage.enterEmail(newUser.email);
-            registerPage.clickSignup();
-            registerPage.fillAccountInformation(newUser);
+            // Register using consistent command
+            cy.register(newUser);
             
-            // Verify account creation success
-            cy.get('h2[data-qa="account-created"]', { timeout: 15000 })
-                .should('be.visible')
-                .invoke('text')
-                .then((text) => {
-                    expect(text.toLowerCase()).to.contain('account created');
-                });
-            cy.get('a[data-qa="continue-button"]').click();
-            cy.get('a[href="/logout"]').click();
+            // Clean account for fresh start
+            cy.get('a[href="/logout"]').click({ force: true });
         });
     });
+
 
     beforeEach(() => {
         cy.login(newUser.email, newUser.password);

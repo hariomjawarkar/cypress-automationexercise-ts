@@ -9,29 +9,17 @@ describe('Login Tests', () => {
 
     before(() => {
         cy.fixture('user').then((data) => {
-            // Register a fresh user specifically for this test run
             testUserEmail = `test_session_${Date.now()}@gmail.com`;
             const newUser = { ...data.user, email: testUserEmail };
             
-            loginPage.visit();
-            loginPage.clickSignupLogin();
-            registerPage.enterName(newUser.name);
-            registerPage.enterEmail(newUser.email);
-            registerPage.clickSignup();
-            registerPage.fillAccountInformation(newUser);
+            // Integrated professional registration command
+            cy.register(newUser);
             
-            // Use case-insensitive matching to handle styling differences
-            cy.get('h2[data-qa="account-created"]', { timeout: 15000 })
-                .should('be.visible')
-                .invoke('text')
-                .then((text) => {
-                    expect(text.toLowerCase()).to.contain('account created');
-                });
-                
-            cy.get('a[data-qa="continue-button"]').click({ force: true });
+            // Clean logout for testing login specifically
             cy.get('a[href="/logout"]').click({ force: true });
         });
     });
+
 
     beforeEach(() => {
         loginPage.visit();

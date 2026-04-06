@@ -17,20 +17,14 @@ describe('Product Tests', () => {
             testUser = { ...data.user };
             testUser.email = `product_test_${Date.now()}@test.com`;
 
-            // Register the user first to make the test self-healing
-            loginPage.visit();
-            loginPage.clickSignupLogin();
-            registerPage.enterName(testUser.name);
-            registerPage.enterEmail(testUser.email);
-            registerPage.clickSignup();
-            registerPage.fillAccountInformation(testUser);
+            // Register using the shared command for reliability
+            cy.register(testUser);
             
-            // Wait for account created success before logging out
-            cy.get('h2[data-qa="account-created"]', { timeout: 15000 }).should('be.visible');
-            cy.get('a[data-qa="continue-button"]').click();
-            cy.get('a[href="/logout"]').click();
+            // Clean logout
+            cy.get('a[href="/logout"]').click({ force: true });
         });
     });
+
 
     beforeEach(() => {
         cy.login(testUser.email, testUser.password);

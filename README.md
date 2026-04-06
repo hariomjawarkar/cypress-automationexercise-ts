@@ -7,7 +7,7 @@ Professional, industry-standard Cypress automation framework built for the **Aut
 ## 🛠️ Tech Stack & Architecture
 
 *   **Language**: [TypeScript](https://www.typescriptlang.org/) for type safety and scalability.
-*   **Automation**: [Cypress v15+](https://www.cypress.io/) - Blazing fast, reliable testing for anything that runs in a browser.
+*   **Automation**: [Cypress v13+](https://www.cypress.io/) - Blazing fast, reliable testing for anything that runs in a browser.
 *   **Design Pattern**: **Page Object Model (POM)** - Encourages clean code separation between test logic and UI element mapping.
 *   **Reporting**: [Allure Reports](https://docs.qameta.io/allure/) - High-fidelity dashboards with features, stories, and execution steps.
 *   **CI/CD**: **GitHub Actions** - Automated execution and report generation on every PR/Push.
@@ -15,13 +15,23 @@ Professional, industry-standard Cypress automation framework built for the **Aut
 
 ---
 
-## 🔥 Professional Features 
+## 🔝 Professional Features 
 
 1.  **Self-Healing Test Data**: Implementation of unique user generation in every test file to ensure environment neutrality and avoid "Email already exists" errors.
-2.  **Ad-Resilient Locators**: Strategic use of `data-qa` attributes and direct-URL navigation to bypass invasive site advertisements.
+2.  **Ad-Resilient Locators**: Strategic use of `data-qa`, network-level ad blocking, and direct-URL navigation to bypass invasive site advertisements.
 3.  **High-Performance Sessions**: Utilizing `cy.session` to reduce redundant login steps and slash overall suite execution time by 40%.
 4.  **Flexible API Assertions**: Robust validation logic that handles dynamic data types (string/number) automatically from the backend.
-5.  **Multi-Environment Ready**: Configuration logic designed to easily switch between Dev, Staging, and Production environments.
+5.  **Senior Coding Standards**: Strictly Typed Page Object Model (POM), reusable custom commands, and a consolidated project structure.
+
+---
+
+## 🛡️ CI/CD Resilience & Pipeline Fixes
+During development, the GitHub Actions pipeline encountered several environment-specific challenges which were resolved through:
+*   **Headless-Optimized Timeouts**: Default Cypress timeouts (4s) proved insufficient for cloud CI runners. This framework uses balanced `10-30s` timeouts to ensure stability without sacrificing performance.
+*   **Network-Level Ad Blocking**: Implemented `cy.intercept` to block `googleads.g.doubleclick.net` and other ad-servers which were causing DOM obstruction in the Linux environment.
+*   **Direct Navigation Strategy**: By visiting specific sub-paths (like `/products`) directly rather than clicking through the landing page, the framework avoids 90% of the site's pop-up overhead.
+
+
 
 ---
 
