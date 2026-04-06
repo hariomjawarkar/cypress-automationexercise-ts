@@ -8,20 +8,21 @@
         "types": [
             "cypress"
         ],
-        "moduleResolution": "bundler",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "baseUrl": ".",
         "paths": {
             "pages/*": [
-                "pages/*"
+                "./pages/*"
             ],
             "utils/*": [
-                "utils/*"
+                "./utils/*"
             ]
         }
     },
+
 
     "include": [
         "cypress/**/*.ts",
