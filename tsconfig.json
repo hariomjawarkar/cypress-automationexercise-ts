@@ -8,20 +8,22 @@
         "types": [
             "cypress"
         ],
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
+        "moduleResolution": "node",
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
+        "ignoreDeprecations": "5.0",
+        "baseUrl": ".",
         "paths": {
             "pages/*": [
-                "./pages/*"
+                "pages/*"
             ],
             "utils/*": [
-                "./utils/*"
+                "utils/*"
             ]
         }
     },
+
 
 
     "include": [
