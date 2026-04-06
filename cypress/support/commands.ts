@@ -65,17 +65,21 @@ Cypress.Commands.add('login', (email: string, password: string) => {
 
 Cypress.Commands.add('register', (user: any) => {
     cy.visit('/login');
-    cy.get('input[data-qa="signup-name"]').type(user.name);
-    cy.get('input[data-qa="signup-email"]').type(user.email);
+    cy.get('input[data-qa="signup-name"]').should('be.visible').type(user.name);
+    cy.get('input[data-qa="signup-email"]').should('be.visible').type(user.email);
     cy.get('button[data-qa="signup-button"]').click({ force: true });
     
-    // Fill details
-    cy.get('#id_gender1').click();
+    // Ensure we reached the details page
+    cy.get('h2.title.text-center b', { timeout: 15000 }).should('be.visible');
+    
+    // Fill all details with scrolling for visibility
+    cy.get('#id_gender1').scrollIntoView().click({ force: true });
     cy.get('input[data-qa="password"]').type(user.password);
     cy.get('#days').select('1');
     cy.get('#months').select('January');
     cy.get('#years').select('2000');
-    cy.get('input[data-qa="first_name"]').type(user.firstName);
+    
+    cy.get('input[data-qa="first_name"]').scrollIntoView().type(user.firstName);
     cy.get('input[data-qa="last_name"]').type(user.lastName);
     cy.get('input[data-qa="address"]').type(user.address);
     cy.get('select[data-qa="country"]').select(user.country);
@@ -83,12 +87,19 @@ Cypress.Commands.add('register', (user: any) => {
     cy.get('input[data-qa="city"]').type(user.city);
     cy.get('input[data-qa="zipcode"]').type(user.zipcode);
     cy.get('input[data-qa="mobile_number"]').type(user.mobile);
-    cy.get('button[data-qa="create-account"]').click({ force: true });
     
-    // Verify and continue
-    cy.get('h2[data-qa="account-created"]', { timeout: 15000 }).should('be.visible');
+    // Click button and verify success
+    cy.get('button[data-qa="create-account"]').scrollIntoView().click({ force: true });
+    
+    // Explicitly handle the "Account Created" header
+    cy.get('h2[data-qa="account-created"]', { timeout: 20000 })
+        .scrollIntoView()
+        .should('be.visible')
+        .and('contain', 'ACCOUNT CREATED');
+        
     cy.get('a[data-qa="continue-button"]').click({ force: true });
 });
+
 
 Cypress.Commands.add('deleteAccount', () => {
     cy.get('a[href="/delete_account"]').click({ force: true });

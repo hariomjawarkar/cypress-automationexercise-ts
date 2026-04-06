@@ -8,30 +8,24 @@
         "types": [
             "cypress"
         ],
-        "moduleResolution": "node",
+        // Bundler is the only resolution that silences baseUrl deprecation warnings
+        "moduleResolution": "Bundler",
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "ignoreDeprecations": "6.0",
-        "baseUrl": ".",
-
         "paths": {
             "pages/*": [
-                "pages/*"
+                "./pages/*"
             ],
             "utils/*": [
-                "utils/*"
+                "./utils/*"
             ]
         }
     },
-
-
-
     "include": [
         "cypress/**/*.ts",
         "pages/**/*.ts",
         "utils/**/*.ts",
         "cypress.config.ts"
     ]
-
 }
