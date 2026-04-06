@@ -1,17 +1,17 @@
 {
     "compilerOptions": {
-        "target": "ES6",
+        "target": "ESNext",
         "lib": [
-            "ES6",
+            "ESNext",
             "DOM"
         ],
         "types": [
             "cypress"
         ],
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "resolveJsonModule": true,
         "esModuleInterop": true,
-        "ignoreDeprecations": "6.0",
+        "skipLibCheck": true,
         "baseUrl": ".",
         "paths": {
             "pages/*": [
@@ -22,6 +22,7 @@
             ]
         }
     },
+
     "include": [
         "cypress/**/*.ts",
         "pages/**/*.ts",
