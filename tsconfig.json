@@ -12,8 +12,9 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "ignoreDeprecations": "5.0",
+        "ignoreDeprecations": "6.0",
         "baseUrl": ".",
+
         "paths": {
             "pages/*": [
                 "pages/*"
