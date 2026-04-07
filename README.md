@@ -1,4 +1,4 @@
-# 🚀 Cypress Automation Framework - Enterprise Edition
+# 🚀 Cypress Automation Framework
 
 [![Cypress Regression Suite](https://github.com/hariomjawarkar/cypress-automationexercise-ts/actions/workflows/cypress.yml/badge.svg)](https://github.com/hariomjawarkar/cypress-automationexercise-ts/actions/workflows/cypress.yml)
 [![Quality Gate](https://img.shields.io/badge/Quality%20Gate-Passed-brightgreen)](https://github.com/hariomjawarkar/cypress-automationexercise-ts/actions)
@@ -21,6 +21,12 @@ Detailed breakdown of test specs and individual execution status.
 ### 🤖 CI/CD Pipeline (GitHub Actions Success)
 Automated regression suite running perfectly on every push to the main branch.
 ![GitHub Actions Success](cypress/images/github-actions-success.png)
+
+### 🎬 Test Execution Videos
+Full execution recordings for critical authentication paths:
+*   [**Login Flow Recording**](cypress/videos/auth/login.cy.ts.mp4)
+*   [**User Registration Flow Recording**](cypress/videos/auth/register.cy.ts.mp4)
+*   [**Baseline Basic Test Recording**](cypress/videos/auth/basic.cy.ts.mp4)
 
 ---
 
