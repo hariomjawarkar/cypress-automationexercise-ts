@@ -23,10 +23,16 @@ Automated regression suite running perfectly on every push to the main branch.
 ![GitHub Actions Success](cypress/images/github-actions-success.png)
 
 ### 🎬 Test Execution Videos
-Full execution recordings for critical authentication paths:
-*   [**Login Flow Recording**](cypress/videos/auth/login.cy.ts.mp4)
-*   [**User Registration Flow Recording**](cypress/videos/auth/register.cy.ts.mp4)
-*   [**Baseline Basic Test Recording**](cypress/videos/auth/basic.cy.ts.mp4)
+Watch the full automated flows for key authentication and critical path scenarios directly:
+
+#### 🔐 Login Flow Recording
+https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/login.cy.ts.mp4
+
+#### 📝 User Registration Flow Recording
+https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/register.cy.ts.mp4
+
+#### 🛡️ Baseline Basic Test Recording
+https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/basic.cy.ts.mp4
 
 ---
 
