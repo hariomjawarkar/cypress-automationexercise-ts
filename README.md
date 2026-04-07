@@ -23,16 +23,22 @@ Automated regression suite running perfectly on every push to the main branch.
 ![GitHub Actions Success](cypress/images/github-actions-success.png)
 
 ### 🎬 Test Execution Videos
-Watch the full automated flows for key authentication and critical path scenarios directly:
+Watch the full automated flows for key authentication and critical path scenarios directly in your browser:
 
 #### 🔐 Login Flow Recording
-https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/login.cy.ts.mp4
+<video src="https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/login.cy.ts.mp4" controls="controls" style="max-width: 100%;">
+  Your browser does not support the video tag.
+</video>
 
 #### 📝 User Registration Flow Recording
-https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/register.cy.ts.mp4
+<video src="https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/register.cy.ts.mp4" controls="controls" style="max-width: 100%;">
+  Your browser does not support the video tag.
+</video>
 
 #### 🛡️ Baseline Basic Test Recording
-https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/basic.cy.ts.mp4
+<video src="https://github.com/hariomjawarkar/cypress-automationexercise-ts/raw/main/cypress/videos/auth/basic.cy.ts.mp4" controls="controls" style="max-width: 100%;">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
