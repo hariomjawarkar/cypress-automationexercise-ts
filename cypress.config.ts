@@ -7,6 +7,8 @@ export default defineConfig({
     specPattern: "cypress/e2e/tests/**/*.ts",
     supportFile: "cypress/support/e2e.ts",
     fixturesFolder: "cypress/fixtures",
+    video: true,   // ✅ enable video
+
 
     env: {
       allure: true,
