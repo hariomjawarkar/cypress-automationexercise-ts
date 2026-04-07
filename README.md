@@ -110,7 +110,6 @@ npm run allure:open
 ## 👤 Author & Contact
 
 **Hariom Jawarkar**
-*   **Role**: Senior SDET / Automation Architect
 *   **LinkedIn**: [Connect with me on LinkedIn](https://www.linkedin.com/in/hariom-jawarkar/)
 *   **GitHub**: [@hariomjawarkar](https://github.com/hariomjawarkar)
 *   **Inquiries**: For automation consulting or technical collaborations, please reach out via LinkedIn.
