@@ -1,4 +1,5 @@
 import { defineConfig } from "cypress";
+import allureWriter from "@shelex/cypress-allure-plugin/writer";
 
 export default defineConfig({
   e2e: {
@@ -12,12 +13,8 @@ export default defineConfig({
       allureResultsPath: "allure-results"
     },
     setupNodeEvents(on, config) {
-      // Load environment-specific config if needed
-      const envName = config.env.envName || 'prod';
-      
       // Allure Writer Setup
-      require('@shelex/cypress-allure-plugin/writer')(on, config);
-      
+      allureWriter(on, config);
       return config;
     },
     viewportWidth: 1280,

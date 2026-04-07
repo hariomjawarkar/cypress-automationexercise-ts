@@ -8,32 +8,34 @@ on:
 
 jobs:
   cypress-run:
+    name: Cypress Test Execution
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
       - name: Cypress Execution
-        # Uses the official Cypress Action (Industry Standard)
+        # Official Cypress Action: Handles caching, installing, and running
         uses: cypress-io/github-action@v6
         with:
-          # Use npm install to fix lockfile sync issues in CI
-          install-command: npm install
+          browser: chrome
+          # We use the script from package.json which includes environment flags
           command: npm run cypress:run
-
-      - name: Fix npm permissions
-        if: always()
-        run: |
-          # Makes binaries executable on the Linux server
-          chmod +x node_modules/.bin/* || true
-
+          
       - name: Generate Allure Report
         if: always()
         run: |
-          # The correct package name is allure-commandline
-          npx allure-commandline generate allure-results --clean -o allure-report
+          # Generate report from results. allure-results is configured in cypress.config.ts
+          npx allure generate allure-results --clean -o allure-report || true
 
-      - name: Upload Allure Dashboard
+      - name: Upload Allure Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -41,9 +43,15 @@ jobs:
           path: allure-report
           retention-days: 7
 
-      - name: Upload Failure Screenshots
-        if: failure()
+      - name: Upload Test Evidence (Screenshots & Videos)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+          name: cypress-evidence
+          path: |
+            cypress/screenshots
+            cypress/videos
+            allure-results
+          if-no-files-found: ignore
+          retention-days: 7
+

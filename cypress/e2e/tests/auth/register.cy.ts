@@ -9,14 +9,16 @@ describe('Register Tests', () => {
     it('User Registration Flow', () => {
         cy.fixture('user').then((data) => {
             const uniqueEmail = `testuser_${Date.now()}@gmail.com`;
-            loginPage.visit();
-            loginPage.clickSignupLogin();
 
+            // Visit the login page which also has the signup form
+            loginPage.visit();
+
+            // Fill the signup section (name + email) on the login page
             registerPage.enterName(data.user.name);
             registerPage.enterEmail(uniqueEmail);
             registerPage.clickSignup();
 
-            // Explicitly wait for navigation to the signup page
+            // After submitting, we should be redirected to signup details
             cy.url().should('include', '/signup');
             registerPage.verifySignupPage();
         });

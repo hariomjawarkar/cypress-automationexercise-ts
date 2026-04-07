@@ -10,6 +10,7 @@ class LoginPage {
 
     visit() {
         cy.visit('/login');
+        cy.get('div.login-form', { timeout: 15000 }).should('be.visible');
     }
 
 
@@ -18,26 +19,26 @@ class LoginPage {
     }
 
     enterEmail(email: string) {
-        cy.get(this.locators.emailInput).type(email);
+        cy.get(this.locators.emailInput).clear().type(email);
     }
 
     enterPassword(password: string) {
-        cy.get(this.locators.passwordInput).type(password);
+        cy.get(this.locators.passwordInput).clear().type(password);
     }
 
     clickLogin() {
-        cy.get(this.locators.loginBtn).click({ force: true });
+        cy.get(this.locators.loginBtn).scrollIntoView().click({ force: true });
     }
 
     login(email: string, password: string) {
-        this.clickSignupLogin();
+        // Form is already visible after visit(), directly fill credentials
         this.enterEmail(email);
         this.enterPassword(password);
         this.clickLogin();
     }
 
     verifyLoginSuccess() {
-        cy.contains('Logged in as').should('be.visible');
+        cy.get('ul.nav.navbar-nav', { timeout: 20000 }).should('contain', 'Logged in as');
     }
 
     verifyLoginError() {
@@ -45,4 +46,4 @@ class LoginPage {
     }
 }
 
-export default LoginPage;
+export default LoginPage;
